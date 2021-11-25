@@ -20,4 +20,10 @@ const io = serverSocket(server);
 // After connection
 io.on("connection", (socket) => {
   console.log("made socket connection", socket.id);
+  // 2) Listen for message
+  socket.on("chat", (data) => {
+    // Data recieved from client
+    // Send data to all sockets (clients)
+    io.sockets.emit("chat", data);
+  });
 });

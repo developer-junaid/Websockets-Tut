@@ -10,7 +10,17 @@
     <script src="/socket.io/socket.io.js"></script>
   </head>
   <body>
-    <h1>Wooo, you see me !</h1>
+    <div id="mario-chat">
+      <div id="chat-window">
+        <div id="output"></div>
+      </div>
+
+      <input type="text" id="handle" placeholder="Handle" />
+      <input type="text" id="message" placeholder="Message" />
+
+      <button id="send">Send</button>
+    </div>
+
     <script src="./chat.js"></script>
   </body>
 </html>
