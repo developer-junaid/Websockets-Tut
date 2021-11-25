@@ -19,5 +19,5 @@ const io = serverSocket(server);
 
 // After connection
 io.on("connection", (socket) => {
-  console.log("made socket connection");
+  console.log("made socket connection", socket.id);
 });
