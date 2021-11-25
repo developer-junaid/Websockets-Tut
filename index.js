@@ -1,5 +1,6 @@
 // Entry file
 const express = require("express");
+const serverSocket = require("socket.io");
 
 // App setup
 const app = express();
@@ -12,3 +13,11 @@ const server = app.listen(port, () => {
 
 // Static files
 app.use(express.static("public"));
+
+// Socket setup
+const io = serverSocket(server);
+
+// After connection
+io.on("connection", (socket) => {
+  console.log("made socket connection");
+});
