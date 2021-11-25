@@ -26,4 +26,10 @@ io.on("connection", (socket) => {
     // Send data to all sockets (clients)
     io.sockets.emit("chat", data);
   });
+
+  // 5) Listen to typing
+  socket.on("typing", (data) => {
+    // Broadcast the message
+    socket.broadcast.emit("typing", data);
+  });
 });
